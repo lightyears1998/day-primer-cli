@@ -1,35 +1,38 @@
-import blessed from "blessed";
+import path from "path";
+import os from "os";
+import fs from "fs-extra";
+import yaml from "js-yaml";
+import { getProgramDataDir } from "./util";
+import { Goal } from "./entity";
 
+const programDataDir = getProgramDataDir()[os.platform()];
 
-// Setup screen.
-const screen = blessed.screen({
-    smartCSR: true,
-    dockBorders: true,
-    fullUnicode: true,
-});
-screen.title = "Day Primer CLI"
+if (!programDataDir) {
+    console.error(`Platform ${os.platform()} is not supported yet.`);
+    process.exit(1);
+}
 
+const dataFilePath = path.join(programDataDir, "./data.yml");
+console.log(dataFilePath);
 
-// Create a box.
-const box = blessed.box({
-    top: "center",
-    left: "center",
-    width: "50%",
-    height: "50%",
-    content: "Set a mono-space font to get better UI\n中文字符",
-    border: {
-        type: 'line'
+fs.ensureDirSync(programDataDir);
+
+let data = [];
+
+try {
+    data = yaml.safeLoad(fs.readFileSync(dataFilePath, { encoding: "utf8" }));
+    for (let i = 0; i < data.length; ++i) {
+        data[i] = new Goal(data[i].name, data[i].description, data[i].comulativeDuring)
     }
-})
-screen.append(box)
+} catch (err) {
+    if (err.code === "ENOENT") {
+        fs.createFileSync(dataFilePath)
+    } else {
+        console.error(err);
+    }
+}
 
+console.table(data);
 
-// Add keybindings to quit program.
-screen.key(['escape', 'q', 'C-c'], (ch, key) => {
-    console.log(ch, key);
-    return process.exit(0)
-});
-
-
-// Render the screen.
-screen.render();
+data.push(new Goal(Math.random().toString(), Math.random().toString(), Math.random()))
+fs.writeFileSync(dataFilePath, yaml.safeDump(data), { encoding: "utf8" });
