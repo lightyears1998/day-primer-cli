@@ -38,7 +38,7 @@ rules:
   linebreak-style:
     - off
   no-console:
-    - warn
+    - off
   no-trailing-spaces:
     - warn
   no-else-return:
@@ -50,8 +50,6 @@ rules:
     - {
       ignoreEOLComments: true
     }
-  no-unused-vars:
-    - warn
   no-return-await:
     - error
   wrap-iife:
