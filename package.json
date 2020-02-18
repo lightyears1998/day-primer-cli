@@ -2,16 +2,20 @@
   "name": "@lightyears1998/day-primer-cli",
   "version": "0.1.0",
   "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "repository": "https://github.com/lightyears1998/phase-cli.git",
   "author": "lightyears1998 <lightyears1998@hotmail.com>",
   "license": "MulanPSL-1.0",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "eslint ./src --ext .ts --fix",
     "lint:strict": "yarn lint --max-warnings 0",
     "build": "tsc",
     "start": "node ./dist/main.js",
     "dev": "ts-node ./src/main.ts",
-    "prepublishOnly": "yarn build"
+    "prepublish": "yarn build"
   },
   "devDependencies": {
     "@types/blessed": "^0.1.17",
