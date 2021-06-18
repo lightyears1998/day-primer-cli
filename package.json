@@ -1,11 +1,11 @@
 {
-    "name": "@lightyears1998/day-primer-core",
-    "version": "0.2.2",
+    "name": "@lightyears1998/day-primer-cli",
+    "version": "0.1.0",
     "main": "./lib/index.js",
     "types": "./lib/index.d.ts",
-    "repository": "https://github.com/lightyears1998/day-primer-core.git",
+    "repository": "https://github.com/lightyears1998/day-primer-cli.git",
     "author": "lightyears1998 <lightyears1998@hotmail.com>",
-    "license": "MIT",
+    "license": "MulanPSL-2.0",
     "files": [
         "bin",
         "lib",
