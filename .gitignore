@@ -1,2 +1,29 @@
-dist
+# Node.js modules
 node_modules
+
+# Build result
+.tsbuildinfo
+lib
+day-primer-core-linux
+day-primer-core-macos
+day-primer-core-win.exe
+
+# Coverage Report
+.nyc_output
+coverage
+
+# Logs
+report.**.json
+**.log
+
+# Sensitive Configuration
+.env
+
+# Runtime Files under Development Mode
+var
+
+# IDE
+.vscode
+
+# Cache
+.DS_STORE
