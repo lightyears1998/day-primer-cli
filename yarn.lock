@@ -3098,10 +3098,10 @@ marked-terminal@^4.1.0:
     node-emoji "^1.10.0"
     supports-hyperlinks "^2.1.0"
 
-marked@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.nlark.com/marked/download/marked-2.0.0.tgz?cache=0&sync_timestamp=1624009689910&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmarked%2Fdownload%2Fmarked-2.0.0.tgz#9662bbcb77ebbded0662a7be66ff929a8611cee5"
-  integrity sha1-lmK7y3frve0GYqe+Zv+SmoYRzuU=
+marked@^4.0.10:
+  version "4.0.10"
+  resolved "https://registry.npmmirror.com/marked/download/marked-4.0.10.tgz#423e295385cc0c3a70fa495e0df68b007b879423"
+  integrity sha512-+QvuFj0nGgO970fySghXGmuw+Fd0gD2x3+MqCWLIPf5oxdv1Ka6b2q+z9RP01P/IaKPMEramy+7cNy/Lw8c3hw==
 
 media-typer@0.3.0:
   version "0.3.0"
